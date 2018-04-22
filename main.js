@@ -1,7 +1,7 @@
 var socket = io();
 
 var time = 0;
-var turn = true;
+var turn = false;
 
 var alarm = new Audio("./alarm.wav");
 
