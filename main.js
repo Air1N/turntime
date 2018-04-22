@@ -7,9 +7,6 @@ var alarm = new Audio("./alarm.wav");
 
 function update() {
     if (time > 1800) {
-        time = 0;
-        turn = !turn;
-        
         alarm.play();
     }
     
