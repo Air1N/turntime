@@ -1,7 +1,7 @@
 var socket = io();
 
-let time = 0;
-let turn = true;
+var time = 0;
+var turn = true;
 
 function update() {
     time++;
@@ -11,7 +11,7 @@ function update() {
         turn != turn;
     }
     
-    socket.emit('timeup', time);
+    socket.emit('timeup', { time: time, turn: turn });
 }
 
 socket.on('loadFile', function(data) {
