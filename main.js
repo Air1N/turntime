@@ -28,6 +28,5 @@ socket.on('loadFile', function(data) {
 
 socket.on('timeup', function(time) {
     time = time;
+    update();
 });
-
-setInterval(update, 1000);
