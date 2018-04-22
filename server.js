@@ -50,8 +50,6 @@ http.listen(port, function() {
     console.log('listening on *:' + (port).toString());
 });
 
-app.use('/assets', express.static(__dirname + '/assets'));
-app.use('/scripts', express.static(__dirname + '/scripts'));
 app.use('/', express.static(__dirname + '/'));
 app.get('/', function(req, res) {
     res.sendFile(__dirname + '/index.html');
