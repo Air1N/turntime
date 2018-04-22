@@ -6,12 +6,12 @@ var turn = true;
 function update() {
     time++;
     
-    if (time > 30 * 60) {
+    if (time > 5) {
         time = 0;
         turn != turn;
     }
     
-    timeleft.innerHTML = "TIME LEFT: " + Math.floor((1800 - time) / 60) + ":" + (1800 - time) % 60;
+    timeleft.innerHTML = "TIME LEFT: " + Math.floor((5 - time) / 60) + ":" + (5 - time) % 60;
     if (turn) {
         whosturn.innerHTML = "Sandra";
     } else {
