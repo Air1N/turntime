@@ -11,7 +11,7 @@ function update() {
         turn != turn;
     }
     
-    timeleft.innerHTML = "TIME LEFT: " + Math.floor((1800 - time) / 60) + (1800 - time) % 60;
+    timeleft.innerHTML = "TIME LEFT: " + Math.floor((1800 - time) / 60) + ":" + (1800 - time) % 60;
     if (turn) {
         whosturn.innerHTML = "Sandra";
     } else {
