@@ -10,6 +10,8 @@ var turn = true;
 
 function loadFiles() {
     fs.readFile(__dirname + '/time.txt', 'utf8', function(err, data) {
+        if (err) console.error(err);
+        
         data = data.split('||');
 
         io.emit('loadFile', data);
@@ -18,6 +20,8 @@ function loadFiles() {
 
 function writeFile() {
     fs.writeFile(__dirname + '/time.txt', time + "||" + turn, function(err) {
+        if (err) console.error(err);
+        
         console.log("The file was saved!");
     });
 }
