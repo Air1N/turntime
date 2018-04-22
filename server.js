@@ -9,7 +9,7 @@ var time = 0;
 var turn = true;
 
 function loadFiles() {
-    fs.readFile(__dirname + '/assets/time.txt', 'utf8', function(err, data) {
+    fs.readFile(__dirname + '/time.txt', 'utf8', function(err, data) {
         data = data.split('||');
 
         io.emit('loadFile', data);
@@ -24,7 +24,9 @@ function writeFile() {
 
 io.on('connection', function(socket) {
     loadFiles();
-
+    
+    console.log("loaded");
+    
     socket.on('timeup', function(t) {
         time = t.time;
         turn = t.turn;
@@ -39,6 +41,7 @@ http.listen(port, function() {
     console.log('listening on *:' + (port).toString());
 });
 
-app.use('/assets', express.static(__dirname + '/assets'));
-app.use('/scripts', express.static(__dirname + '/scripts'));
-app.use('/', express.static(__dirname));
+app.use('/', express.static(__dirname + '/'));
+app.get('/', function(request, response) {
+  response.render('./index.html');
+});
