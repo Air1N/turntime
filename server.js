@@ -28,7 +28,7 @@ function writeFile() {
 
 io.on('connection', function(socket) {
     
-    console.log("connected")
+    console.log("connected");
     
     loadFiles();
     
