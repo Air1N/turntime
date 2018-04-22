@@ -6,7 +6,7 @@ var fs = require('fs');
 var port = process.env.PORT || 80;
 
 var time = 0;
-var turn = true;
+var turn = false;
 
 function loadFiles() {
     fs.readFile(__dirname + '/time.txt', 'utf8', function(err, data) {
