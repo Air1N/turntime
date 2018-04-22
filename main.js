@@ -10,7 +10,7 @@ function update() {
     
     if (time > 5) {
         time = 0;
-        turn != turn;
+        turn = !turn;
         
         alarm.play();
     }
