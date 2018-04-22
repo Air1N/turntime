@@ -24,6 +24,7 @@ socket.on('loadFile', function(data) {
 });
 
 socket.on('timeup', function(t) {
-    time = t;
+    time = t.time;
+    turn = t.turn;
     update();
 });
