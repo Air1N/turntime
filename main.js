@@ -6,8 +6,6 @@ var turn = true;
 var alarm = new Audio("./alarm.wav");
 
 function update() {
-    time++;
-    
     if (time > 1800) {
         time = 0;
         turn = !turn;
@@ -21,13 +19,15 @@ function update() {
     } else {
         whosturn.innerHTML = "Jayna";
     }
-    
-    socket.emit('timeup', { time: time, turn: turn });
 }
 
 socket.on('loadFile', function(data) {
     time = data[0];
     turn = data[1];
+});
+
+socket.on('timeup', function(time) {
+    time = time;
 });
 
 setInterval(update, 1000);
