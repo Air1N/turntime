@@ -1,9 +1,9 @@
 {
-	"name" : "socket-chat-example",
-	"version" : "0.0.1",
-	"description" : "my first socket.io app",
+	"name" : "turntimer",
+	"version" : "0.0.5",
+	"description" : "Times Turns",
 	"dependencies" : {
 		"express" : "^4.14.0",
-		"socket.io" : "^1.4.8"
+		"socket.io" : "^2.0.4"
 	}
 }
