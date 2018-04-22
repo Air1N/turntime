@@ -8,11 +8,6 @@ var port = process.env.PORT || 80;
 let time = 0;
 let turn = true;
 
-app.use('/', express.static(__dirname));
-app.get('/', function(req, res) {
-    res.sendFile(__dirname + '/index.html');
-});
-
 function loadFiles() {
     fs.readFile(__dirname + '/time.txt', 'utf8', function(err, data) {
         data = data.split('||');
@@ -41,4 +36,10 @@ io.on('connection', function(socket) {
 
 http.listen(port, function() {
     console.log('listening on *:' + (port).toString());
+});
+
+app.use('/', express.static(__dirname + '/scripts/'));
+app.use('/', express.static(__dirname + '/'));
+app.get('/', function(req, res) {
+    res.sendFile(__dirname + '/index.html');
 });
