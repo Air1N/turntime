@@ -5,8 +5,8 @@ var io = require('socket.io')(http);
 var fs = require('fs');
 var port = process.env.PORT || 80;
 
-let time = 0;
-let turn = true;
+var time = 0;
+var turn = true;
 
 function loadFiles() {
     fs.readFile(__dirname + '/time.txt', 'utf8', function(err, data) {
@@ -26,7 +26,8 @@ io.on('connection', function(socket) {
     loadFiles();
 
     socket.on('timeup', function(t) {
-        time = t;
+        time = t.time;
+        turn = t.turn;
     });
 
     socket.once('disconnect', function() {
