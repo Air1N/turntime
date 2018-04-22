@@ -9,7 +9,7 @@ var time = 0;
 var turn = true;
 
 function loadFiles() {
-    fs.readFile(__dirname + '/time.txt', 'utf8', function(err, data) {
+    fs.readFile(__dirname + '/assets/time.txt', 'utf8', function(err, data) {
         data = data.split('||');
 
         io.emit('loadFile', data);
@@ -39,8 +39,6 @@ http.listen(port, function() {
     console.log('listening on *:' + (port).toString());
 });
 
-app.use('/', express.static(__dirname + '/scripts'));
-app.use('/', express.static(__dirname + '/'));
-app.get('/', function(req, res) {
-    res.sendFile(__dirname + '/index.html');
-});
+app.use('/assets', express.static(__dirname + '/assets'));
+app.use('/scripts', express.static(__dirname + '/scripts'));
+app.use('/', express.static(__dirname));
