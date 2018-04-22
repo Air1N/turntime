@@ -36,7 +36,7 @@ io.on('connection', function(socket) {
 
 function timeup() {
     time++;
-    socket.emit('timeup', time);
+    io.emit('timeup', time);
 }
 
 setInterval(timeup, 1000);
