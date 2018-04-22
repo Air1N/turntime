@@ -28,16 +28,18 @@ function writeFile() {
 
 io.on('connection', function(socket) {
     loadFiles();
-    
-    socket.on('timeup', function(t) {
-        time = t.time;
-        turn = t.turn;
-    });
 
     socket.once('disconnect', function() {
         writeFile();
     });
 });
+
+function timeup() {
+    time++;
+    socket.emit('timeup', time);
+}
+
+setInterval(timeup, 1000);
 
 http.listen(port, function() {
     console.log('listening on *:' + (port).toString());
