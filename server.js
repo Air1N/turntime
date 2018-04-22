@@ -27,18 +27,11 @@ function writeFile() {
 }
 
 io.on('connection', function(socket) {
-    
-    console.log("connected");
-    
     loadFiles();
-    
-    console.log("loaded");
     
     socket.on('timeup', function(t) {
         time = t.time;
         turn = t.turn;
-        
-        console.log('time');
     });
 
     socket.once('disconnect', function() {
