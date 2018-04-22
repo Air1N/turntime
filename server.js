@@ -27,6 +27,9 @@ function writeFile() {
 }
 
 io.on('connection', function(socket) {
+    
+    console.log("connected")
+    
     loadFiles();
     
     console.log("loaded");
@@ -34,6 +37,8 @@ io.on('connection', function(socket) {
     socket.on('timeup', function(t) {
         time = t.time;
         turn = t.turn;
+        
+        console.log('time');
     });
 
     socket.once('disconnect', function() {
@@ -45,7 +50,9 @@ http.listen(port, function() {
     console.log('listening on *:' + (port).toString());
 });
 
+app.use('/assets', express.static(__dirname + '/assets'));
+app.use('/scripts', express.static(__dirname + '/scripts'));
 app.use('/', express.static(__dirname + '/'));
-app.get('/', function(request, response) {
-  response.render('./index.html');
+app.get('/', function(req, res) {
+    res.sendFile(__dirname + '/index.html');
 });
