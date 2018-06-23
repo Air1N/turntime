@@ -41,7 +41,8 @@ function timeup() {
     
     if (time > 1800) {
       time = 0;
-      turn = !turn;
+      turn++;
+      if (turn == 3) turn = 0;
     }
 }
 
