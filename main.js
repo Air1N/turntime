@@ -12,7 +12,7 @@ function update() {
     }
     
     timeleft.innerHTML = Math.floor((1800 - time) / 60) + ":" + (1800 - time) % 60;
-    whosturn.innerHTML = people[turn] + "(" + turn + ")";
+    whosturn.innerHTML = people[turn] + " (" + turn + ")";
 }
 
 socket.on('loadFile', function(data) {
