@@ -19,7 +19,7 @@ function loadFiles() {
         io.emit('loadFile', data);
     });
     
-    if (turn == "null") turn = Math.floor(Math.random() * people.length);
+    if (turn == "null\n") turn = Math.floor(Math.random() * people.length);
 }
 
 function writeFile() {
