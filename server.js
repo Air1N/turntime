@@ -41,7 +41,7 @@ io.on('connection', function(socket) {
 function timeup() {
     time++;
 
-    io.emit('timeup', {time: time, turn: turn});
+    io.emit('timeup', {time: time, turn: turn, first: first});
     
     if (time > 1800) {
       time = 0;
