@@ -23,7 +23,7 @@ function loadFiles() {
 }
 
 function writeFile() {
-    fs.writeFile(__dirname + '/time.txt', time + "||" + turn + "||" + first, function(err) {
+    fs.writeFile(__dirname + '/time.txt', time + "||" + turn, function(err) {
         if (err) console.error(err);
         
         console.log("The file was saved!");
