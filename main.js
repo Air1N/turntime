@@ -1,8 +1,9 @@
 var socket = io();
 
 var time = 0;
-var turn = false;
-
+let people = ["Sandra", "Jayna", "Aliah"];
+var turn = Math.floor(Math.random() * people.length);
+let firstTurn = people[turn];
 var alarm = new Audio("./alarm.wav");
 
 function update() {
@@ -11,11 +12,7 @@ function update() {
     }
     
     timeleft.innerHTML = Math.floor((1800 - time) / 60) + ":" + (1800 - time) % 60;
-    if (turn) {
-        whosturn.innerHTML = "Sandra";
-    } else {
-        whosturn.innerHTML = "Jayna";
-    }
+    whosturn.innerHTML = people[turn];
 }
 
 socket.on('loadFile', function(data) {
