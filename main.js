@@ -7,11 +7,11 @@ var alarm = new Audio("./alarm.wav");
 
 function update() {
     if (time > 1800) {
-        //alarm.play();
+        alarm.play();
     }
     
     timeleft.innerHTML = Math.floor((1800 - time) / 60) + ":" + (1800 - time) % 60;
-    whosturn.innerHTML = "Turn: " + turn;
+    whosturn.innerHTML = "Turn " + turn;
 }
 
 socket.on('loadFile', function(data) {
