@@ -4,6 +4,7 @@ var time = 0;
 let people = ["Sandra", "Jayna", "Aliah"];
 var turn = 0;
 var alarm = new Audio("./alarm.wav");
+var turns = [0, 0, 0];
 
 function update() {
     if (time > 1800) {
