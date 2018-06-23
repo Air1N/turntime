@@ -14,7 +14,8 @@ function loadFiles() {
         if (err) console.error(err);
         
         data = data.split('||');
-
+        turn = data[1];
+        
         io.emit('loadFile', data);
     });
     
