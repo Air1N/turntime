@@ -6,7 +6,7 @@ var fs = require('fs');
 var port = process.env.PORT || 80;
 
 var time = 0;
-var people = ["Sandra", "Jayna", "Aliah"];
+var people = 3;
 var turn = 0;
 
 function loadFiles() {
@@ -15,7 +15,7 @@ function loadFiles() {
         
         data = data.split('||');
         
-        if (data[1] == "null\n") data[1] = Math.floor(Math.random() * people.length);
+        if (data[1] == "null\n") data[1] = Math.floor(Math.random() * people);
         turn = data[1]
         
         io.emit('loadFile', data);
