@@ -18,8 +18,6 @@ function loadFiles() {
         
         io.emit('loadFile', data);
     });
-    
-    if (turn == "null\n") turn = Math.floor(Math.random() * people.length);
 }
 
 function writeFile() {
@@ -32,7 +30,8 @@ function writeFile() {
 
 io.on('connection', function(socket) {
     loadFiles();
-
+    if (turn == "null\n") turn = Math.floor(Math.random() * people.length);
+    
     socket.once('disconnect', function() {
         writeFile();
     });
