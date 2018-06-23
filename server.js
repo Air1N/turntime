@@ -6,7 +6,11 @@ var fs = require('fs');
 var port = process.env.PORT || 80;
 
 var time = 0;
-var turn = false;
+
+var people = ["Sandra", "Jayna", "Aliah"];
+var turn = Math.floor(Math.random() * people.length);
+
+var first = people[turn];
 
 function loadFiles() {
     fs.readFile(__dirname + '/time.txt', 'utf8', function(err, data) {
