@@ -11,7 +11,7 @@ function update() {
     }
     
     timeleft.innerHTML = Math.floor((1800 - time) / 60) + ":" + (1800 - time) % 60;
-    whosturn.innerHTML = turn + ": " + people[turn];
+    whosturn.innerHTML = "Turn: " + turn;
 }
 
 socket.on('loadFile', function(data) {
