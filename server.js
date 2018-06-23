@@ -6,11 +6,7 @@ var fs = require('fs');
 var port = process.env.PORT || 80;
 
 var time = 0;
-
-var people = ["Sandra", "Jayna", "Aliah"];
-var turn = Math.floor(Math.random() * people.length);
-
-var first = people[turn];
+var turn = 0;
 
 function loadFiles() {
     fs.readFile(__dirname + '/time.txt', 'utf8', function(err, data) {
@@ -41,7 +37,7 @@ io.on('connection', function(socket) {
 function timeup() {
     time++;
 
-    io.emit('timeup', {time: time, turn: turn, first: first});
+    io.emit('timeup', {time: time, turn: turn});
     
     if (time > 1800) {
       time = 0;
