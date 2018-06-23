@@ -14,7 +14,9 @@ function loadFiles() {
         if (err) console.error(err);
         
         data = data.split('||');
-        turn = data[1];
+        
+        if (data[1] == "null\n") data[1] = Math.floor(Math.random() * people.length);
+        turn = data[1]
         
         io.emit('loadFile', data);
     });
@@ -30,7 +32,6 @@ function writeFile() {
 
 io.on('connection', function(socket) {
     loadFiles();
-    if (turn == "null\n") turn = Math.floor(Math.random() * people.length);
     
     socket.once('disconnect', function() {
         writeFile();
