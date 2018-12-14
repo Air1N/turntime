@@ -8,6 +8,7 @@ var port = process.env.PORT || 80;
 var time = 0;
 var people = 2;
 var turn = 0;
+var minutes = 45;
 
 function loadFiles() {
     fs.readFile(__dirname + '/time.txt', 'utf8', function(err, data) {
@@ -43,10 +44,10 @@ function timeup() {
 
     io.emit('timeup', {time: time, turn: turn});
     
-    if (time > 1800) {
+    if (time > minutes * 60) {
       time = 0;
       turn++;
-      if (turn == 3) turn = 0;
+      if (turn == people) turn = 0;
     }
 }
 
