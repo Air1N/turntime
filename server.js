@@ -6,7 +6,7 @@ var fs = require('fs');
 var port = process.env.PORT || 80;
 
 var time = 0;
-var people = 3;
+var people = 2;
 var turn = 0;
 
 function loadFiles() {
