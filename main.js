@@ -12,7 +12,7 @@ function update() {
         alarm.play();
     }
     
-    timeleft.innerHTML = Math.floor((1800 - time) / 60) + ":" + (1800 - time) % 60;
+    timeleft.innerHTML = Math.floor((minutes * 60 - time) / 60) + ":" + (minutes * 60 - time) % 60;
     whosturn.innerHTML = people[turn] + " (" + turn + ")";
 }
 
