@@ -5,9 +5,10 @@ let people = ["Sandra", "Jayna", "Aliah"];
 var turn = 0;
 var alarm = new Audio("./alarm.wav");
 var turns = [0, 0, 0];
+let minutes = 45;
 
 function update() {
-    if (time > 1800) {
+    if (time > minutes * 60) {
         alarm.play();
     }
     
