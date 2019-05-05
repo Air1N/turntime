@@ -13,6 +13,7 @@ function update() {
         alarm.play();
         
         var popup = window.open('epass.html', 'ENTER PASSWORD!', 'resizable,width=480=height=575');
+        popup.turn = turn;
         popup.focus();
         
         console.log(popup.password);
