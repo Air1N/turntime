@@ -12,7 +12,7 @@ function update() {
     if (time > minutes * 60) {
         alarm.play();
         
-        var popup = window.open('epass.js', 'ENTER PASSWORD!', 'resizable,width=480=height=575');
+        var popup = window.open('epass.html', 'ENTER PASSWORD!', 'resizable,width=480=height=575');
         popup.focus();
         
         console.log(popup.password);
