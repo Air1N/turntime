@@ -16,6 +16,8 @@ function update() {
             password = confirm("Enter your password");
         }
         
+        socket.emit("passwordAccepted");
+        
         time = 0;
     }
     
@@ -33,7 +35,6 @@ socket.on('timeup', function(t) {
     turn = t.turn;
     update();
 });
-
 
 window.onbeforeunload = function(e) {
     return "Would you really like to close your browser?";
