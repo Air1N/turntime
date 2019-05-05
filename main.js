@@ -15,6 +15,8 @@ function update() {
         var popup = window.open('epass.js', 'ENTER PASSWORD!', 'resizable,width=480=height=575');
         popup.focus();
         
+        console.log(popup.password);
+        
         socket.emit("passwordAccepted");
         
         time = 0;
