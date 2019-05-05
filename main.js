@@ -8,15 +8,25 @@ var alarm = new Audio("./alarm.wav");
 var turns = [0, 0, 0];
 let minutes = 0.1;
 
+let password = "";
+let passwords = ["113", "412"];
+
+let alarmTimeout;
+
 function update() {
     if (time > minutes * 60) {
         alarm.play();
         
-        var popup = window.open('epass.html', 'ENTER PASSWORD!', 'resizable,width=480=height=575');
-        popup.turn = turn;
-        popup.focus();
+        alarmTimeout = setTimeout(function() {alarm.play()}, 1000);
         
-        console.log(popup.password);
+        while (password != passwords[turn]) {
+            alarm.play();
+            
+            password = prompt("Enter your password " + people[!turn ? 1 : 0]);
+            alert("Nope! Try again");
+
+            alarm.play();
+        }
         
         socket.emit("passwordAccepted");
         
