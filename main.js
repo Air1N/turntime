@@ -14,6 +14,7 @@ function update() {
         while (password != passwords[turn]) {
             password = confirm("Enter your password");
         }
+        time = 0;
     }
     
     timeleft.innerHTML = Math.floor((minutes * 60 - time) / 60) + ":" + (minutes * 60 - time) % 60;
