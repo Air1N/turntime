@@ -9,6 +9,8 @@ var time = 0;
 var people = 2;
 var turn = 0;
 var minutes = 0.1;
+let password = "";
+let passwords = ["113", "412"];
 
 function loadFiles() {
     fs.readFile(__dirname + '/time.txt', 'utf8', function(err, data) {
