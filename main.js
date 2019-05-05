@@ -15,7 +15,8 @@ function update() {
         
         while (password != passwords[turn]) {
             alarm.play();
-            password = prompt("Enter your password");
+            alert("Hey kid!");
+            password = prompt("Enter your password" + people[!turn]);
         }
         
         socket.emit("passwordAccepted");
