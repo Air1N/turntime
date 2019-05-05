@@ -11,9 +11,11 @@ let minutes = 0.1;
 function update() {
     if (time > minutes * 60) {
         alarm.play();
+        
         while (password != passwords[turn]) {
             password = confirm("Enter your password");
         }
+        
         time = 0;
     }
     
