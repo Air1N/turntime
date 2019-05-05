@@ -14,9 +14,6 @@ function update() {
         alarm.play();
         
         while (password != passwords[turn]) {
-            var myWindow = window.open(url);   // Opens a new window
-            myWindow.focus();
-            myWindow.location.reload(true);
             password = prompt("Enter your password");
         }
         
