@@ -15,10 +15,12 @@ function update() {
         
         while (password != passwords[turn]) {
             alarm.play();
-            alert("Hey kid!");
+            
             timeleft.select();
             timeleft.focus();
-            password = prompt("Enter your password" + people[!turn]);
+
+            password = prompt("Enter your password" + people[!result ? 1 : 0]);
+            alert("Nope! Try again");
         }
         
         socket.emit("passwordAccepted");
