@@ -14,6 +14,7 @@ function update() {
         alarm.play();
         
         while (password != passwords[turn]) {
+            alarm.play();
             password = prompt("Enter your password");
         }
         
