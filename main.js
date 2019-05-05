@@ -14,15 +14,6 @@ function update() {
         
         var popup = window.open('epass.js', 'ENTER PASSWORD!', 'resizable,width=480=height=575');
         popup.focus();
-
-        while (password != passwords[turn]) {
-            alarm.play();
-            
-            timeleft.focus();
-
-            password = prompt("Enter your password " + people[!turn ? 1 : 0]);
-            alert("Nope! Try again");
-        }
         
         socket.emit("passwordAccepted");
         
