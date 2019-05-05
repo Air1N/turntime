@@ -16,6 +16,8 @@ function update() {
         while (password != passwords[turn]) {
             alarm.play();
             alert("Hey kid!");
+            timeleft.select();
+            timeleft.focus();
             password = prompt("Enter your password" + people[!turn]);
         }
         
