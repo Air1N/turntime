@@ -39,6 +39,10 @@ io.on('connection', function(socket) {
     socket.once('disconnect', function() {
         writeFile();
     });
+    
+    socket.on('passwordAccepted', function() {
+        password = passwords[turn];
+    });
 });
 
 function timeup() {
