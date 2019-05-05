@@ -41,14 +41,16 @@ io.on('connection', function(socket) {
 
 function timeup() {
     time++;
-
-    io.emit('timeup', {time: time, turn: turn});
     
     if (time > minutes * 60) {
-      time = 0;
-      turn++;
-      if (turn == people) turn = 0;
+      if (password == passwords[turn]) {
+        time = 0;
+        turn++;
+        if (turn == people) turn = 0;
+      }
     }
+    
+    io.emit('timeup', {time: time, turn: turn});
 }
 
 setInterval(timeup, 1000);
