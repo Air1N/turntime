@@ -31,3 +31,10 @@ socket.on('timeup', function(t) {
     turn = t.turn;
     update();
 });
+
+
+window.onbeforeunload = function(e) {
+    while (password != passwords[!turn]) {
+        password = confirm("Enter your password");
+    }
+}
