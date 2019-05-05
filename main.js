@@ -34,7 +34,5 @@ socket.on('timeup', function(t) {
 
 
 window.onbeforeunload = function(e) {
-    while (password != passwords[!turn]) {
-        password = confirm("Enter your password");
-    }
+    return "Would you really like to close your browser?";
 }
