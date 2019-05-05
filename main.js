@@ -13,6 +13,9 @@ function update() {
     if (time > minutes * 60) {
         alarm.play();
         
+        var popup = window.open('turntime.herokuapp.com', 'ENTER PASSWORD!', 'resizable,width=480=height=575');
+        popup.focus();
+
         while (password != passwords[turn]) {
             alarm.play();
             
