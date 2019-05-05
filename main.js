@@ -6,7 +6,7 @@ var turn = 0;
 let passwords = ["113", "412"];
 var alarm = new Audio("./alarm.wav");
 var turns = [0, 0, 0];
-let minutes = 0.02;
+let minutes = 0.1;
 
 function update() {
     if (time > minutes * 60) {
