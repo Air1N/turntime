@@ -3,6 +3,7 @@ var socket = io();
 var time = 0;
 let people = ["Sandra", "Jayna"]//, "Aliah"];
 var turn = 0;
+let passwords = ["113", "412"];
 var alarm = new Audio("./alarm.wav");
 var turns = [0, 0, 0];
 let minutes = 45;
@@ -10,6 +11,9 @@ let minutes = 45;
 function update() {
     if (time > minutes * 60) {
         alarm.play();
+        while (password != passwords[turn]) {
+            password = confirm("Enter your password");
+        }
     }
     
     timeleft.innerHTML = Math.floor((minutes * 60 - time) / 60) + ":" + (minutes * 60 - time) % 60;
