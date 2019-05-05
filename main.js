@@ -13,7 +13,7 @@ function update() {
     if (time > minutes * 60) {
         alarm.play();
         
-        var popup = window.open('turntime.herokuapp.com', 'ENTER PASSWORD!', 'resizable,width=480=height=575');
+        var popup = window.open('epass.js', 'ENTER PASSWORD!', 'resizable,width=480=height=575');
         popup.focus();
 
         while (password != passwords[turn]) {
@@ -21,7 +21,7 @@ function update() {
             
             timeleft.focus();
 
-            password = prompt("Enter your password" + people[!result ? 1 : 0]);
+            password = prompt("Enter your password " + people[!turn ? 1 : 0]);
             alert("Nope! Try again");
         }
         
